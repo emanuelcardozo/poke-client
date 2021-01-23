@@ -1,7 +1,7 @@
-import logo from '../assets/svgs/logo.svg';
 import '../assets/stylesheets/App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Index from "./Index.js"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
