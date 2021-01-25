@@ -5,7 +5,7 @@ import Images from "./show/Images"
 import Loading from "./Loading"
 
 
-function Show({ match }) {
+function Show({ match, history }) {
   const { id } = match.params
   const [ pokemon, setPokemon ] = useState({});
 
@@ -14,7 +14,7 @@ function Show({ match }) {
       .then( response => {
           setPokemon(response)
       }).catch( e => {
-        console.log(e);
+        history.push("/error")
       })
   }, [id])
 
