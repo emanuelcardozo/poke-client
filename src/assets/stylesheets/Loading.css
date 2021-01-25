@@ -7,7 +7,7 @@ body {
   background: #ecf0f1;
 }
 
-p {
+h1 {
   color: black;
   text-align: center;
 }
@@ -28,8 +28,7 @@ p {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: inset -10px 10px 0 10px #ccc;
-  animation: fall .25s ease-in-out,
-             shake 1.25s cubic-bezier(.36,.07,.19,.97) infinite;
+  animation: shake 1.25s cubic-bezier(.36,.07,.19,.97) infinite;
 }
 .pokeball::before,
 .pokeball::after {
@@ -61,11 +60,13 @@ p {
   box-shadow: 0 0 0 10px black;
   animation: blink .5s alternate infinite;
 }
+
 /* Animation */
 @keyframes blink {
   from { background: #eee;}
   to { background: #e74c3c; }
 }
+
 @keyframes shake {
   0 { transform: translate(0, 0) rotate(0); }
   20% { transform: translate(-10px, 0) rotate(-20deg); }
@@ -74,6 +75,7 @@ p {
   60% { transform: translate(10px, 0) rotate(10deg); }
   100% { transform: translate(0, 0) rotate(0); }
 }
+
 @keyframes fall {
   0% { top: -200px }
   60% { top: 0 }

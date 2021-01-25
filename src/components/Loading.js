@@ -7,7 +7,7 @@ function Loading(){
         <div className="pokeball__button"></div>
       </div>
       <br />
-      <p>Loading...</p>
+      <h1>Loading...</h1>
     </div>
   )
 }
