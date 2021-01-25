@@ -2,6 +2,8 @@ import API from "../api/index.js"
 import { useState, useEffect } from "react"
 import utils from "../lib/utils"
 import Images from "./show/Images"
+import Loading from "./Loading"
+
 
 function Show({ match }) {
   const { id } = match.params
@@ -18,7 +20,7 @@ function Show({ match }) {
 
   console.log(pokemon);
 
-  if(utils.isEmpty(pokemon)) return <p>Loading...</p>
+  if(utils.isEmpty(pokemon)) return <Loading />
 
   return(
     <div className="container">

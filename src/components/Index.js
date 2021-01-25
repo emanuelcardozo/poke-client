@@ -1,6 +1,7 @@
 import API from "../api/index.js"
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
+import Loading from "./Loading"
 
 function Index(props) {
   const { search } = props.location;
@@ -23,7 +24,7 @@ function Index(props) {
     props.history.push("?page=" + (page+1))
   }
 
-  if(state.loading) return ( <p>Loading...</p> )
+  if(state.loading) return ( <Loading /> )
 
   return(
     <div className="container">
