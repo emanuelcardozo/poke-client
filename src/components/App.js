@@ -1,6 +1,7 @@
 import '../assets/stylesheets/App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Index from "./Index.js"
+import Show from "./Show.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route to="/" exact component={ Index } />
+          <Route path="/pokemon/:id" component={ Show } />
+          <Route path="/" exact component={ Index } />
         </Switch>
       </BrowserRouter>
     </div>
