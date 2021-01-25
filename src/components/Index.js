@@ -11,7 +11,7 @@ function Index(props) {
   useEffect(() => {
     API.getPokemons(page)
       .then( response => {
-          setState({ pokemons: response.results, loading: false })
+        setState({ pokemons: response.results, loading: false })
       }).catch( e => {
         console.log(e);
       })
@@ -30,12 +30,12 @@ function Index(props) {
       <div className="row">
         <div className="offset-3 col-md-6">
           { state.pokemons.map((pokemon, i)=>{
-            const id = pokemon.url.split("pokemon/")[1]
+            const id = pokemon.url.split("pokemon/")[1].replace("/", "")
 
             return(
               <div key={ i } className="card">
                 <div className="card-body">
-                  <Link to={ `/pokemon/${ id }`}>{pokemon.name}</Link>
+                  <Link to={ `/pokemon/${ id }` }>{pokemon.name}</Link>
                 </div>
               </div>
             )
