@@ -18,8 +18,6 @@ function Show({ match }) {
       })
   }, [id])
 
-  console.log(pokemon);
-
   if(utils.isEmpty(pokemon)) return <Loading />
 
   return(
