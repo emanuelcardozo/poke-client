@@ -2,6 +2,7 @@ import API from "../api/index.js"
 import { useState, useEffect } from "react"
 import utils from "../lib/utils"
 import Carousel from "./show/Carousel"
+import Types from "./show/Types"
 import Loading from "./utils/Loading"
 import "../assets/stylesheets/show.css"
 
@@ -33,6 +34,7 @@ function Show({ match, history }) {
           <p>{ `Weight: ${pokemon.weight}` }</p>
           <p>{ `Base XP: ${pokemon.base_experience}` }</p>
           <Carousel sprites={ pokemon.sprites } />
+          <Types types={ pokemon.types } />
         </div>
         <div className="col-md-3">
           <button className="btn btn-primary" onClick={ (ev) => history.push(`/pokemon/${id+1}`) }>Next</button>

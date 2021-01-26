@@ -1,3 +1,9 @@
+.field {
+  height: auto;
+  margin: 0px !important;
+  padding: .6em 0;
+}
+
 .images-container {
   height: 25rem;
   overflow: scroll;
@@ -41,4 +47,87 @@ div .carousel {
 .carousel-item img {
   height: -webkit-fill-available;
   background: white;
+}
+
+.poke-type {
+  width: 5em;
+  margin: .5em;
+  padding: .2em;
+  text-transform: capitalize;
+  color: white;
+  border-radius: .5em;
+  font-weight: bolder;
+  box-shadow: 2px 2px 2px 0 #afafaf;
+}
+
+.bug {
+  background-color: darkseagreen;
+}
+
+.dark {
+  background-color: black;
+}
+
+.dragon {
+  background-color: darkviolet;
+}
+
+.electric {
+  background-color: yellow;
+}
+
+.fairy {
+  background-color: darksalmon;
+}
+
+.fighting {
+  background-color: red;
+}
+
+.fire {
+  background-color: orange;
+}
+
+.flying {
+  background-color: lightblue;
+}
+
+.ghost {
+  background-color: violet;
+}
+
+.grass {
+  background-color: green;
+}
+
+.ground {
+  background-color: brown;
+}
+
+.ice {
+  background-color: aquamarine;
+}
+
+.normal {
+  background-color: burlywood;
+}
+
+.poison {
+  background-color: purple;
+}
+
+.psychic {
+  background-color: pink;
+}
+
+.rock {
+  background-color: darkgoldenrod;
+}
+
+.steel {
+  background-color: lightgray
+}
+
+.water {
+  background-color: blue;
 }
