@@ -2,7 +2,7 @@ import API from "../api/index.js"
 import { useState, useEffect } from "react"
 import utils from "../lib/utils"
 import Images from "./show/Images"
-import Loading from "./Loading"
+import Loading from "./utils/Loading"
 
 
 function Show({ match, history }) {
