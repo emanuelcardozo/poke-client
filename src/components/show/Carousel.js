@@ -6,12 +6,12 @@ function Images({ sprites }){
   const images = utils.getAllValuesFrom(sprites)
 
   return(
-    <Carousel>
+    <Carousel indicators={ false }>
     {
       images.map((image, i) => {
         return (
-          <Carousel.Item interval={2000} >
-            <img src={image[1]} alt={image[0]} key={ i } />
+          <Carousel.Item interval={2000} key={ i } >
+            <img src={image[1]} alt={image[0]} />
           </Carousel.Item>
           )
       })
