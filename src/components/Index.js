@@ -1,47 +1,47 @@
 import API from "../api/index.js"
-import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
-import Loading from "./Loading"
+import Loading from "./utils/Loading"
+import Paginator from "./utils/Paginator"
+import List from "./index/List"
 
-function Index(props) {
-  const { search } = props.location;
+function Index({ location, history }) {
+  const { search } = location;
   const pageString = search.split("page=")[1];
   const page = parseInt(pageString || 1);
-  const [ state, setState ] = useState({ pokemons: [], loading: true});
+  const [ state, setState ] = useState({ pokemons: [], count: 0, loading: true});
 
   useEffect(() => {
     API.getPokemons(page)
       .then( response => {
-        setState({ pokemons: response.results, loading: false })
+        if( response.results.length === 0 )
+          throw { type: "error", description: "Wrong Page"}
+
+        setState({ pokemons: response.results, count: response.count, loading: false })
       }).catch( e => {
-        console.log(e);
+        history.push("/?page=1")
       })
   }, [page])
 
-  const handleClick = (ev)=>{
-    ev.preventDefault();
+  const handleClick = (page)=>{
     setState({ ...state, loading: true })
-    props.history.push("?page=" + (page+1))
+    history.push("?page=" + page)
   }
 
-  if(state.loading) return ( <Loading /> )
+  let Component = null;
+
+  if(state.loading)
+    Component = Loading;
+  else
+    Component = List;
 
   return(
     <div className="container">
       <div className="row">
         <div className="offset-3 col-md-6">
-          { state.pokemons.map((pokemon, i)=>{
-            const id = pokemon.url.split("pokemon/")[1].replace("/", "")
-
-            return(
-              <div key={ i } className="card">
-                <div className="card-body">
-                  <Link to={ `/pokemon/${ id }` }>{pokemon.name}</Link>
-                </div>
-              </div>
-            )
-          }) }
-          <button onClick={ handleClick }>button</button>
+          <div className="list-container">
+            <Component pokemons={ state.pokemons } />
+          </div>
+          <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
         </div>
       </div>
     </div>

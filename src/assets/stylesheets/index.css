@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.list-container {
+  height: 25rem;
+}
+
+.list {
+  background: lightgray;
+  height: 20.75rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  border-radius: .25rem;
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+.list .card:hover {
+  background-color: #e9ecef;
+}
+
+.list .card:hover a {
+  color: #0056b3;
+}
