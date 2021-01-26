@@ -9,6 +9,34 @@ const utils = {
 
   capitalize: ([first, ...rest]) => {
     return first.toUpperCase() + rest.join("");
+  },
+
+  getAllValuesFrom: (obj) => {
+    let firsTime = true
+    const subObjects = []
+    const values = []
+
+    while(subObjects.length || firsTime){
+
+      if(firsTime){
+        firsTime = false;
+      } else {
+        obj = subObjects.pop()
+      }
+
+      for( const key in obj ){
+        let value = obj[key]
+
+        if(value) {
+          if(typeof value === "string" )
+            values.push([key, value])
+          else
+            subObjects.push(value)
+        }
+      }
+    }
+
+    return values;
   }
 }
 

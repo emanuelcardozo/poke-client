@@ -1,20 +1,14 @@
 import React from "react"
 import utils from "../../lib/utils"
 
-function Images(props){
-  const { sprites } = props
-  const { front_default } = sprites.other.dream_world
+function Images({ sprites }){
+  const images = utils.getAllValuesFrom(sprites)
 
   return(
     <React.Fragment>
-    { front_default &&
-      <img src={front_default} alt={"front_default"} /> }
     {
-      Object.keys(sprites).map((key, i) => {
-        const url = sprites[key];
-
-        if(utils.isAString(url))
-          return <img src={url} alt={key} key={ i } />
+      images.map((image, i) => {
+        return <img src={image[1]} alt={image[0]} key={ i } />
       })
     }
     </React.Fragment>
