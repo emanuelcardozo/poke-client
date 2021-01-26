@@ -1,8 +1,9 @@
 import API from "../api/index.js"
 import { useState, useEffect } from "react"
 import utils from "../lib/utils"
-import Images from "./show/Images"
+import Carousel from "./show/Carousel"
 import Loading from "./utils/Loading"
+import "../assets/stylesheets/show.css"
 
 
 function Show({ match, history }) {
@@ -28,7 +29,7 @@ function Show({ match, history }) {
           <p>{ `Height: ${pokemon.height}` }</p>
           <p>{ `Weight: ${pokemon.weight}` }</p>
           <p>{ `Base XP: ${pokemon.base_experience}` }</p>
-          <Images sprites={ pokemon.sprites } />
+          <Carousel sprites={ pokemon.sprites } />
         </div>
       </div>
     </div>
