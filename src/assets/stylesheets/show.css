@@ -4,9 +4,26 @@
   padding: .6em 0;
 }
 
-.images-container {
-  height: 25rem;
-  overflow: scroll;
+.poke-button {
+  background-color: red !important;
+  font-weight: bolder !important;
+  color: white !important;
+  width: 6em;
+  box-shadow: 2px 2px 2px 0 #afafaf;
+}
+
+.prev {
+  float: left;
+  border-radius: 1em 0 0 1em !important;
+}
+
+.next {
+  float: right;
+  border-radius: 0 1em 1em 0 !important;
+}
+
+.poke-button:hover {
+  background: darkred !important;
 }
 
 div .carousel {

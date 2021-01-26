@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import utils from "../lib/utils"
 import Carousel from "./show/Carousel"
 import Types from "./show/Types"
+import Info from "./show/Info"
 import Loading from "./utils/Loading"
 import "../assets/stylesheets/show.css"
 
@@ -20,24 +21,38 @@ function Show({ match, history }) {
       })
   }, [id])
 
+  function goTo(page){
+    history.push(`/pokemon/${page}`)
+  }
+
   if(utils.isEmpty(pokemon)) return <Loading />
 
   return(
     <div className="container">
       <div className="row">
-        <div className="col-md-3">
-          <button className="btn btn-primary" onClick={ (ev) => history.push(`/pokemon/${id-1}`) }>Previous</button>
-        </div>
-        <div className="col-md-6">
-          <h3>{ utils.capitalize( pokemon.name ) }</h3>
-          <p>{ `Height: ${pokemon.height}` }</p>
-          <p>{ `Weight: ${pokemon.weight}` }</p>
-          <p>{ `Base XP: ${pokemon.base_experience}` }</p>
+        <div className="col-md-6 margin_auto">
+          <div className="row">
+            <div className="col-3">
+              <button
+                className="btn poke-button prev"
+                onClick={ (ev) => goTo(id-1) }>
+                Previous
+              </button>
+            </div>
+            <div className="col-6">
+              <h3>{ utils.capitalize( pokemon.name ) }</h3>
+            </div>
+            <div className="col-3">
+              <button
+                className="btn poke-button next"
+                onClick={ (ev) => goTo(id+1) }>
+                Next
+              </button>
+            </div>
+          </div>
           <Carousel sprites={ pokemon.sprites } />
           <Types types={ pokemon.types } />
-        </div>
-        <div className="col-md-3">
-          <button className="btn btn-primary" onClick={ (ev) => history.push(`/pokemon/${id+1}`) }>Next</button>
+          <Info pokemon={ pokemon } />
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@ function Index({ location, history }) {
   return(
     <div className="container">
       <div className="row">
-        <div className="offset-3 col-md-6">
+        <div className="col-md-6 margin_auto">
           <div className="list-container">
             <Component pokemons={ state.pokemons } />
           </div>
