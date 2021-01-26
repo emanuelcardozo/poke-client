@@ -7,7 +7,7 @@ import "../assets/stylesheets/show.css"
 
 
 function Show({ match, history }) {
-  const { id } = match.params
+  const id = parseInt( match.params.id )
   const [ pokemon, setPokemon ] = useState({});
 
   useEffect(() => {
@@ -24,12 +24,18 @@ function Show({ match, history }) {
   return(
     <div className="container">
       <div className="row">
-        <div className="offset-3 col-md-6">
+        <div className="col-md-3">
+          <button className="btn btn-primary" onClick={ (ev) => history.push(`/pokemon/${id-1}`) }>Previous</button>
+        </div>
+        <div className="col-md-6">
           <h3>{ utils.capitalize( pokemon.name ) }</h3>
           <p>{ `Height: ${pokemon.height}` }</p>
           <p>{ `Weight: ${pokemon.weight}` }</p>
           <p>{ `Base XP: ${pokemon.base_experience}` }</p>
           <Carousel sprites={ pokemon.sprites } />
+        </div>
+        <div className="col-md-3">
+          <button className="btn btn-primary" onClick={ (ev) => history.push(`/pokemon/${id+1}`) }>Next</button>
         </div>
       </div>
     </div>
