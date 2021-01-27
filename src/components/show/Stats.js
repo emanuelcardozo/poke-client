@@ -4,7 +4,7 @@ function Stats({ stats }) {
 
   return(
     <div className="stats col-md-6">
-      <div className="container shadow_container">
+      <div className="container shadow_container stats_container">
       <h3>Stats</h3>
       {
         stats.map((stat, i) => {

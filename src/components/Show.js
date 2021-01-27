@@ -32,7 +32,7 @@ function Show({ match, history }) {
           <h3>{ utils.capitalize( pokemon.name ) }</h3>
           <div className="row">
             <div className="col-md-6">
-              <div className="container shadow_container">
+              <div className="container shadow_container images_container">
                 <Images sprites={ pokemon.sprites } />
                 <Types types={ pokemon.types } />
               </div>
