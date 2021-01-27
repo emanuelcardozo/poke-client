@@ -13,12 +13,19 @@ code {
 }
 
 .list-container {
-  height: 27em;
+  height: 22em;
 }
 
-.list-container h1 {
+.logo {
   font-family: pokefontSolid;
-  font-size: 4em;
+  font-size: 2em;
+  color: yellow;
+  -webkit-text-stroke: 2px #007bff
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: yellowgreen;
 }
 
 .list {

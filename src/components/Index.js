@@ -39,7 +39,6 @@ function Index({ location, history }) {
       <div className="row">
         <div className="col-md-8 margin_auto">
           <div className="list-container">
-            <h1>PokeList:</h1>
             <Component pokemons={ state.pokemons } />
           </div>
           <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
