@@ -29,7 +29,7 @@ function Paginator(props){
       <Component { ...props } deviceWidth={ deviceWidth } pages={ pages } />
 
       <Pagination.Item onClick={ (ev) => handleClick( pages ) } active={ currentPage === pages }>{ pages }</Pagination.Item>
-      { showButton && <Pagination.Next onClick={ (ev) => handleClick( pages + 1 ) } disabled={ currentPage+1 > pages } />}
+      { showButton && <Pagination.Next onClick={ (ev) => handleClick( currentPage + 1 ) } disabled={ currentPage+1 > pages } />}
       { showButton && <Pagination.Last onClick={ (ev) => handleClick( pages ) } disabled={ currentPage === pages } /> }
     </Pagination>
   )
