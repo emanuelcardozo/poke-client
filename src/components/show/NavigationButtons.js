@@ -2,6 +2,7 @@ function NavigationButtons({ id, history }) {
 
   function goTo(newId){
     history.push(`/pokemon/${newId}`)
+    window.scrollTo(0, 0);
   }
 
   return(
