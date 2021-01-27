@@ -39,3 +39,13 @@
 
 .without_margin { margin: 0px !important}
 .margin_auto { margin: auto !important;}
+
+@font-face {
+  font-family: pokefontHollow;
+  src: url("../fonts/Pokemon Hollow.ttf")
+}
+
+@font-face {
+  font-family: pokefontSolid;
+  src: url("../fonts/Pokemon Solid.ttf")
+}
