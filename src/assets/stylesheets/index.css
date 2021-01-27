@@ -19,13 +19,13 @@ code {
 .logo {
   font-family: pokefontSolid;
   font-size: 2em;
-  color: yellow;
+  color: gold;
   -webkit-text-stroke: 2px #007bff
 }
 
 .logo:hover {
   text-decoration: none;
-  color: yellowgreen;
+  color: goldenrod;
 }
 
 .list {
