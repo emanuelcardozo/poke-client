@@ -61,8 +61,14 @@ div .carousel {
   transform: translateY(-50%);
 }
 
+.carousel-item {
+  height: 20em !important;
+}
+
 .carousel-item img {
-  height: -webkit-fill-available;
+  /* max-height: 100% !important;
+  width: auto !important; */
+  height: inherit;
   background: white;
 }
 
