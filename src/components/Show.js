@@ -5,6 +5,7 @@ import Images from "./show/Images"
 import Types from "./show/Types"
 import Info from "./show/Info"
 import NavigationButtons from "./show/NavigationButtons"
+import Stats from "./show/Stats"
 import Loading from "./utils/Loading"
 import "../assets/stylesheets/show.css"
 
@@ -27,11 +28,18 @@ function Show({ match, history }) {
   return(
     <div className="container">
       <div className="row">
-        <div className="col-md-6 margin_auto">
+        <div className="col-md-8 margin_auto">
           <h3>{ utils.capitalize( pokemon.name ) }</h3>
-          <Images sprites={ pokemon.sprites } />
-          <Types types={ pokemon.types } />
-          <Info pokemon={ pokemon } />
+          <div className="row">
+            <div className="col-md-6">
+              <Images sprites={ pokemon.sprites } />
+              <Types types={ pokemon.types } />
+            </div>
+            <Stats stats={ pokemon.stats } />
+          </div>
+          <div className="row">
+            <Info pokemon={ pokemon } />
+          </div>
           <NavigationButtons id={ id } history={ history } />
         </div>
       </div>
