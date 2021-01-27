@@ -1,4 +1,19 @@
 import { ProgressBar } from "react-bootstrap"
+import heart from "../../assets/svgs/heart.svg"
+import helmet from "../../assets/svgs/helmet.svg"
+import biceps from "../../assets/svgs/biceps.svg"
+import shield from "../../assets/svgs/shield.svg"
+import sword from "../../assets/svgs/sword.svg"
+import speed from "../../assets/svgs/speed.svg"
+
+const icons = {
+  hp: heart,
+  defense: helmet,
+  attack: biceps,
+  special_attack: sword,
+  special_defense: shield,
+  speed
+}
 
 function Stats({ stats }) {
 
@@ -13,7 +28,7 @@ function Stats({ stats }) {
 
           return(
             <div key={i} className="progress_stat">
-              <label>{ key }</label>
+              <label>{ key } <img className="stat_icon" src={ icons[key.replace('-', '_')] }/></label>
               <ProgressBar now={ value/2.25 } label={`${value}`} variant={ 'danger' } />
             </div>
           )
