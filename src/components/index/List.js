@@ -1,7 +1,12 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import Loading from "../utils/Loading"
 
 function List({ pokemons }) {
+
+  if(!pokemons.length)
+    return <Loading />
+
   return(
     <div className="list">
     { pokemons.map((pokemon, i)=>{
