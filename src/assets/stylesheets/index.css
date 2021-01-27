@@ -61,5 +61,25 @@ code {
 }
 
 .pagination {
-  padding: revert !important;
+  padding: 0 !important;
+  margin: auto;
+  width: fit-content;
+}
+
+.pagination .page-item {
+  width: 50px ;
+}
+
+.page-item + .ellipsis {
+  width: 36px;
+}
+
+.page-item + .ellipsis2 {
+  width: 18px;
+}
+
+.page-item + .ellipsis a, .page-item + .ellipsis2 a {
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: content-box;
 }
