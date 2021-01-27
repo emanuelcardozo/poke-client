@@ -33,8 +33,7 @@ div .carousel {
 }
 
 .carousel-control-prev, .carousel-control-next {
-  background-color: rgba(255, 0, 0, 0.7);
-
+  background-color: rgba(255, 0, 0, 0.5);
   border-radius: 50%;
   width: 3rem !important;
   height: 3rem;
@@ -213,4 +212,19 @@ div .carousel {
 
 .progress_stat .progress {
   height: 1.5em;
+}
+
+.image_indicator {
+  background: white;
+  font-size: .8em;
+  text-align: center;
+  border: .5px solid black;
+  width: 20%;
+  position: relative;
+  z-index: 2;
+  left: 1em;
+  top: -2em;
+  border-radius: 10px;
+  opacity: 0.9;
+  font-weight: 700;
 }

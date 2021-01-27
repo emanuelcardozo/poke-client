@@ -1,12 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import utils from "../../lib/utils"
 import Carousel from "react-bootstrap/carousel"
 
 function Images({ sprites }){
   const images = utils.getAllValuesFrom(sprites)
+  const [ number, setNumber ] = useState(0)
 
   return(
-    <Carousel indicators={ false }>
+    <React.Fragment>
+    <Carousel
+      indicators={ false }
+      controls={ images.length > 1 }
+      onSlide={ (number, dir)=> setNumber(number) }
+    >
     {
       images.map((image, i) => {
         return (
@@ -17,6 +23,8 @@ function Images({ sprites }){
       })
     }
     </Carousel>
+    <div className="image_indicator">{ `${ images.length ? number+1 : 0 } / ${ images.length }` }</div>
+    </React.Fragment>
   )
 }
 
