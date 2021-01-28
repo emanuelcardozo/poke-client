@@ -1,5 +1,5 @@
 import API from "../api/index.js"
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Paginator from "./utils/Paginator"
 import List from "./index/List"
 
@@ -27,16 +27,12 @@ function Index({ location, history }) {
   }
 
   return(
-    <div className="container">
-      <div className="row">
-        <div className="col-md-8 margin_auto">
-          <div className="list-container">
-            <List pokemons={ state.pokemons } />
-          </div>
-          <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
-        </div>
+    <React.Fragment>
+      <div className="list-container">
+        <List pokemons={ state.pokemons } />
       </div>
-    </div>
+      <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
+    </React.Fragment>
   )
 }
 

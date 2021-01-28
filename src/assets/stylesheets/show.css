@@ -8,22 +8,38 @@
   background-color: red !important;
   font-weight: bolder !important;
   color: white !important;
-  width: 6em;
+  width: 100%;
   box-shadow: 2px 2px 2px 0 #afafaf;
 }
 
-.prev {
-  float: left;
-  border-radius: 1em 0 0 1em !important;
-}
-
-.next {
-  float: right;
-  border-radius: 0 1em 1em 0 !important;
+.navigation_container .col-3, .navigation_container .col-6 {
+  padding: 0;
+  margin-top: 1em;
 }
 
 .poke-button:hover {
   background: darkred !important;
+}
+
+.prev {
+  float: left;
+  border-radius: 0 0 0 10px !important;
+}
+
+.middle {
+  background-color: white !important;
+  color: red !important;
+  border-radius: 0px !important;
+}
+
+.middle:hover {
+  background: #efefef !important;
+  color: red !important;
+}
+
+.next {
+  float: right;
+  border-radius: 0 0 10px 0 !important;
 }
 
 div .carousel {
@@ -227,4 +243,16 @@ div .carousel {
   border-radius: 10px;
   opacity: 0.9;
   font-weight: 700;
+}
+
+.poke-name {
+  font-family: Verdana;
+  font-size: 2em;
+  padding: .5em;
+  font-weight: 600;
+  border: 1px solid #efefef;
+  background: ghostwhite;
+  border-radius: 10px;
+  margin-top: .5em;
+  box-shadow: 2px 2px 2px 0 #afafaf;
 }

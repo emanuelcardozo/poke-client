@@ -1,5 +1,5 @@
 import API from "../api/index.js"
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import utils from "../lib/utils"
 import Images from "./show/Images"
 import Types from "./show/Types"
@@ -26,26 +26,22 @@ function Show({ match, history }) {
   if(utils.isEmpty(pokemon)) return <Loading />
 
   return(
-    <div className="container">
+    <React.Fragment>
+      <h3 className="poke-name" >{ utils.capitalize( pokemon.name ) }</h3>
       <div className="row">
-        <div className="col-md-8 margin_auto">
-          <h3>{ utils.capitalize( pokemon.name ) }</h3>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="container shadow_container images_container">
-                <Images sprites={ pokemon.sprites } />
-                <Types types={ pokemon.types } />
-              </div>
-            </div>
-            <Stats stats={ pokemon.stats } />
+        <div className="col-md-6">
+          <div className="container shadow_container images_container">
+            <Images sprites={ pokemon.sprites } />
+            <Types types={ pokemon.types } />
           </div>
-          <div className="row">
-            <Info pokemon={ pokemon } />
-          </div>
-          <NavigationButtons id={ id } history={ history } />
         </div>
+        <Stats stats={ pokemon.stats } />
       </div>
-    </div>
+      <div className="row">
+        <Info pokemon={ pokemon } />
+      </div>
+      <NavigationButtons id={ id } history={ history } />
+    </React.Fragment>
   )
 }
 

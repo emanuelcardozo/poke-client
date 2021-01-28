@@ -6,7 +6,7 @@ function NavigationButtons({ id, history }) {
   }
 
   return(
-    <div className="row">
+    <div className="row navigation_container">
       <div className="col-3">
         <button
           className="btn poke-button prev"
