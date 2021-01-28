@@ -15,6 +15,9 @@ import "../assets/stylesheets/show.css"
 function Show({ match, history }) {
   const id = parseInt( match.params.id )
   const [ pokemon, setPokemon ] = useState({});
+  const setLoading = () => {
+    setPokemon({})
+  }
 
   useEffect(() => {
     API.getPokemon(id)
@@ -29,7 +32,7 @@ function Show({ match, history }) {
 
   return(
     <React.Fragment>
-      <NavigationButtons id={ id } history={ history }>
+      <NavigationButtons id={ id } history={ history } onClick={ setLoading } >
         <h3 className="poke-name" >{ pokemon.name }</h3>
       </ NavigationButtons>
       <div className="row">
