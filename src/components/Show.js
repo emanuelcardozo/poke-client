@@ -31,7 +31,7 @@ function Show({ match, history }) {
   if(utils.isEmpty(pokemon)) return <Loading />
 
   return(
-    <React.Fragment>
+    <div className="col-md-8 main_content">
       <NavigationButtons id={ id } history={ history } onClick={ setLoading } >
         <h3 className="poke-name" >{ pokemon.name }</h3>
       </ NavigationButtons>
@@ -46,7 +46,7 @@ function Show({ match, history }) {
         <Info pokemon={ pokemon } />
         <Moves moves={ pokemon.moves } />
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 

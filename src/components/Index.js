@@ -27,12 +27,12 @@ function Index({ location, history }) {
   }
 
   return(
-    <React.Fragment>
+    <div className="col-md-8 margin_auto">
       <div className="list-container">
         <List pokemons={ state.pokemons } />
       </div>
       <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
-    </React.Fragment>
+    </div>
   )
 }
 

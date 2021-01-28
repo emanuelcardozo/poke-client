@@ -12,15 +12,13 @@ function App() {
       <Header />
       <div className="container">
         <div className="row">
-          <div className="col-md-8 main_content">
-            <BrowserRouter>
-              <Switch>
-                <Route path="/pokemon/:id" component={ Show } />
-                <Route path="/error" exact component={ Error } />
-                <Route path="/" exact component={ Index } />
-              </Switch>
-            </BrowserRouter>
-          </div>
+          <BrowserRouter>
+            <Switch>
+              <Route path="/pokemon/:id" component={ Show } />
+              <Route path="/error" exact component={ Error } />
+              <Route path="/" exact component={ Index } />
+            </Switch>
+          </BrowserRouter>
         </div>
       </div>
     </div>
