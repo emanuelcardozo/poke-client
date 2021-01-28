@@ -21,6 +21,10 @@ const API = {
     const characteristic = await fetch(reqCharacteristic)
       .then(res => {
         return res.json()
+      }).catch( e => {
+        console.log(e);
+
+        return null
       })
 
     return { ...pokemon, characteristic }
