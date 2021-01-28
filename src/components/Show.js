@@ -4,6 +4,7 @@ import utils from "../lib/utils"
 import Images from "./show/Images"
 import Types from "./show/Types"
 import Info from "./show/Info"
+import Moves from "./show/Moves"
 import NavigationButtons from "./show/NavigationButtons"
 import Stats from "./show/Stats"
 import Loading from "./utils/Loading"
@@ -40,6 +41,7 @@ function Show({ match, history }) {
       </div>
       <div className="row">
         <Info pokemon={ pokemon } />
+        <Moves moves={ pokemon.moves } />
       </div>
     </React.Fragment>
   )

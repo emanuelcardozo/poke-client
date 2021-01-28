@@ -233,6 +233,62 @@ div .carousel {
   animation-delay: 1s;
 }
 
+.moves_container {
+  right: -1000px;
+  animation: backslide 0.5s forwards;
+  animation-delay: 1.5s;
+}
+
+.moves_container h3 {
+  text-align: center;
+}
+
+.moves_container td {
+  text-transform: capitalize;
+}
+
+.moves_list {
+  overflow: scroll;
+  height: 85%;
+  padding: 1em;
+  background: white;
+  border: 1px solid lightgrey;
+}
+
+.moves_table {
+  height: 15em;
+}
+
+.moves_table table {
+  height: 100%;
+  width: 100%;
+}
+
+.moves_table table, .moves_table tbody {
+  flex: 1 1 auto;
+  display: block;
+  overflow-y: scroll;
+}
+
+.moves_table tr{
+  width: 100%;
+}
+
+.moves_table thead, .moves_table tr {
+  display: table;
+  table-layout: fixed;
+}
+
+.moves_table tbody {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.move_index {
+  width: 20%
+}
+
 .shadow_container h3, .shadow_container .carousel-inner {
   text-align: center;
 }
