@@ -27,7 +27,9 @@ function Show({ match, history }) {
 
   return(
     <React.Fragment>
-      <h3 className="poke-name" >{ utils.capitalize( pokemon.name ) }</h3>
+      <NavigationButtons id={ id } history={ history }>
+        <h3 className="poke-name" >{ pokemon.name }</h3>
+      </ NavigationButtons>
       <div className="row">
         <div className="col-md-6">
           <div className="container shadow_container images_container">
@@ -40,7 +42,6 @@ function Show({ match, history }) {
       <div className="row">
         <Info pokemon={ pokemon } />
       </div>
-      <NavigationButtons id={ id } history={ history } />
     </React.Fragment>
   )
 }

@@ -1,26 +1,28 @@
-function NavigationButtons({ id, history }) {
+import back from "../../assets/svgs/back.svg"
+
+function NavigationButtons({ id, history, children }) {
 
   function goTo(newId){
     history.push(`/pokemon/${newId}`)
-    window.scrollTo(0, 0);
   }
 
   return(
     <div className="row navigation_container">
-      <div className="col-3">
+      <div className="col-2">
         <button
           className="btn poke-button prev"
           onClick={ (ev) => goTo(id-1) }>
-          Previous
+            <img src={ back } />
         </button>
       </div>
-      <div className="col-6">
+      <div className="col-8">
+        { children }
       </div>
-      <div className="col-3">
+      <div className="col-2">
         <button
           className="btn poke-button next"
           onClick={ (ev) => goTo(id+1) }>
-          Next
+          <img src={ back } />
         </button>
       </div>
     </div>

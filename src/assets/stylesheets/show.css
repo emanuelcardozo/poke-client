@@ -5,16 +5,33 @@
 }
 
 .poke-button {
+  width: 100%;
   background-color: red !important;
+  box-shadow: 2px 2px 2px 0 #afafaf;
+
   font-weight: bolder !important;
   color: white !important;
-  width: 100%;
+}
+
+.navigation_container {
+  padding: .5em;
+  margin-top: .5em;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  background: ghostwhite;
   box-shadow: 2px 2px 2px 0 #afafaf;
 }
 
-.navigation_container .col-3, .navigation_container .col-6 {
+.navigation_container .col-2, .navigation_container .col-8 {
   padding: 0;
-  margin-top: 1em;
+  /* margin-top: 1em; */
+}
+
+.poke-button {
+  height: 100%;
 }
 
 .poke-button:hover {
@@ -23,23 +40,23 @@
 
 .prev {
   float: left;
-  border-radius: 0 0 0 10px !important;
+  border-radius: 10px 0 0 10px !important;
 }
 
-.middle {
-  background-color: white !important;
-  color: red !important;
-  border-radius: 0px !important;
+.prev img {
+  width: 20px;
+  height: 20px;
 }
 
-.middle:hover {
-  background: #efefef !important;
-  color: red !important;
+.next img {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
 }
 
 .next {
   float: right;
-  border-radius: 0 0 10px 0 !important;
+  border-radius: 0 10px 10px 0 !important;
 }
 
 div .carousel {
@@ -54,6 +71,7 @@ div .carousel {
   width: 3rem !important;
   height: 3rem;
   margin: 0;
+
   position: absolute !important;
   top: 50% !important;
   -ms-transform: translateY(-50%);
@@ -91,12 +109,13 @@ div .carousel {
   width: 5em;
   margin: .5em;
   padding: .2em;
-  text-transform: capitalize;
-  color: white;
   border-radius: .5em;
-  font-weight: bolder;
   box-shadow: 2px 2px 2px 0 #afafaf;
+
+  text-transform: capitalize;
   text-align: center;
+  color: white;
+  font-weight: bolder;
 }
 
 .bug {
@@ -172,15 +191,18 @@ div .carousel {
 }
 
 .shadow_container {
+  text-align: left;
+
   background-color: ghostwhite;
   border: 1px solid #efefef;
+  border-radius: 10px;
   box-shadow: 2px 2px 2px 0 #afafaf;
+
   height: 23em;
   padding: 1em;
-  border-radius: 10px;
   margin-top: .5em;
   margin-bottom: .5em;
-  text-align: left;
+
   position: relative;
 }
 
@@ -218,6 +240,7 @@ div .carousel {
 .shadow_container label {
   text-transform: capitalize;
   font-weight: bolder;
+
   width: 100%;
   margin: 0;
 }
@@ -231,28 +254,26 @@ div .carousel {
 }
 
 .image_indicator {
-  background: white;
-  font-size: .8em;
-  text-align: center;
-  border: .5px solid black;
   width: 20%;
+
+  text-align: center;
+  font-size: .8em;
+  font-weight: 700;
+
+  border: .5px solid black;
+  border-radius: 10px;
+  background: white;
+  opacity: 0.9;
+
   position: relative;
-  z-index: 2;
   left: 1em;
   top: -2em;
-  border-radius: 10px;
-  opacity: 0.9;
-  font-weight: 700;
+  z-index: 2;
 }
 
 .poke-name {
-  font-family: Verdana;
-  font-size: 2em;
-  padding: .5em;
+  text-transform: capitalize;
   font-weight: 600;
-  border: 1px solid #efefef;
-  background: ghostwhite;
-  border-radius: 10px;
-  margin-top: .5em;
-  box-shadow: 2px 2px 2px 0 #afafaf;
+  font-size: 2em;
+  margin: 0;
 }
