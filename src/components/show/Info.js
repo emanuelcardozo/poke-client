@@ -16,17 +16,19 @@ function Info({ pokemon }) {
       <h3>General</h3>
       <div className="info_body">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-6">
             <label>Height</label><p>{pokemon.height}</p>
             <label>Base XP</label><p>{pokemon.base_experience}</p>
           </div>
-          <div className="col-md-6">
+          <div className="col-6">
             <label>Weight</label><p>{pokemon.weight}</p>
             <label>Highest Stat</label><p>{ highestStat }</p>
           </div>
         </div>
-        <div className="info_description">
-          <label>Description</label><p>{ description }</p>
+        <div className="row info_description">
+          <div className="col-12">
+            <label>Description</label><p>{ description }</p>
+          </div>
         </div>
       </div>
     </Container>
