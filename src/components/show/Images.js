@@ -1,10 +1,14 @@
 import React, { useState } from "react"
 import utils from "../../lib/utils"
 import Carousel from "react-bootstrap/carousel"
+import image from "../../assets/images/unknown.png"
 
 function Images({ sprites }){
   const images = utils.getAllValuesFrom(sprites)
   const [ number, setNumber ] = useState(0)
+
+  if(!images.length)
+    images.push(["No image", image])
 
   return(
     <React.Fragment>
