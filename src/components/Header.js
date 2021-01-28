@@ -1,8 +1,13 @@
+import "../assets/stylesheets/header.css"
+import NavBar from "./header/NavBar"
+import Logo from "./header/Logo"
+
 function Header() {
   return(
-    <h1>
-      <a href="/" className="logo">PokéList</a>
-    </h1>
+    <header className="row header">
+      <Logo />
+      <NavBar />
+    </header>
   )
 }
 

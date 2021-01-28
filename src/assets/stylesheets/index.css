@@ -27,18 +27,6 @@ code {
   height: 22em;
 }
 
-.logo {
-  font-family: pokefontSolid;
-  font-size: 2em;
-  color: gold;
-  -webkit-text-stroke: 2px #007bff
-}
-
-.logo:hover {
-  text-decoration: none;
-  color: goldenrod;
-}
-
 .list {
   height: 20.75rem;
   margin-bottom: 1rem;
