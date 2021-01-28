@@ -333,3 +333,13 @@ div .carousel {
   font-size: 2em;
   margin: 0;
 }
+
+.no_info {
+  height: 4em;
+  background: darkred;
+  color: white;
+  padding: .5em;
+  border-radius: 10px;
+  font-weight: bolder;
+  margin: 3em 1em;
+}
