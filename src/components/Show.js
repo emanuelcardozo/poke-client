@@ -7,6 +7,7 @@ import Info from "./show/Info"
 import NavigationButtons from "./show/NavigationButtons"
 import Stats from "./show/Stats"
 import Loading from "./utils/Loading"
+import Container from "./utils/Container"
 import "../assets/stylesheets/show.css"
 
 
@@ -31,12 +32,10 @@ function Show({ match, history }) {
         <h3 className="poke-name" >{ pokemon.name }</h3>
       </ NavigationButtons>
       <div className="row">
-        <div className="col-md-6">
-          <div className="container shadow_container images_container">
-            <Images sprites={ pokemon.sprites } />
-            <Types types={ pokemon.types } />
-          </div>
-        </div>
+        <Container className="images_container">
+          <Images sprites={ pokemon.sprites } />
+          <Types types={ pokemon.types } />
+        </Container>
         <Stats stats={ pokemon.stats } />
       </div>
       <div className="row">
