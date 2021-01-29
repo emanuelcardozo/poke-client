@@ -76,6 +76,21 @@
   text-align: center;
 }
 
+.error_container.shadow_container {
+  height: 25em;
+}
+
+
 .error_container a {
-  color: darkslateblue !important
+  padding: .5em 1em !important;
+  border-radius: 10px;
+  width: 3em;
+  background: darkslateblue;
+  color: white !important;
+}
+
+.error_container a:hover {
+  text-decoration: none !important;
+  background: rgb(124, 115, 180);
+  box-shadow: 2px 2px 0 gray;
 }
