@@ -9,18 +9,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <div className="container">
-        <div className="row">
-          <BrowserRouter>
-            <Switch>
-              <Route path="/pokemon/:id" component={ Show } />
-              <Route path="/error" exact component={ Error } />
-              <Route path="/" exact component={ Index } />
-            </Switch>
-          </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <div className="container">
+          <div className="row">
+              <Switch>
+                <Route path="/pokemon/:id" component={ Show } />
+                <Route path="/error" exact component={ Error } />
+                <Route path="/pokemons" exact component={ Index } />
+                <Route path="/about_us" exact component={ null } />
+                <Route path="/contact_us" exact component={ null } />
+                <Route path="/sign_in" exact component={ null } />
+                <Route path="/" exact component={ null } />
+              </Switch>
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     </div>
   );
 }
