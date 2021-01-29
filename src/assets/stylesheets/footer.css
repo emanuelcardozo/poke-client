@@ -37,13 +37,13 @@ footer .col-sm-4 {
 }
 
 .language_container .btn-secondary:first-child {
-  border-top-left-radius: 50% !important;
-  border-bottom-left-radius: 50% !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
 }
 
 .language_container .btn-secondary:last-child {
-  border-top-right-radius: 50% !important;
-  border-bottom-right-radius: 50% !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 
 .language_container .btn-secondary {
