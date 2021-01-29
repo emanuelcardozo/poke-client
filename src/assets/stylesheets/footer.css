@@ -1,6 +1,6 @@
 footer {
   display: flex;
-  background: purple;
+  background: #004b80ed;
   color: white;
   position: relative;
   bottom: 0;
@@ -28,7 +28,12 @@ footer .col-sm-4 {
   width: 2.3em;
 }
 
-.icons-provider {
+.icons-provider a {
+  color: white;
+}
+
+.icons-provider a:hover {
+  color: gray
 }
 
 .language_container .btn-secondary:first-child {
