@@ -21,17 +21,19 @@ function Paginator(props){
       Component = PaginationWithMiddlePages
 
   return(
-    <Pagination>
-      { showButton && <Pagination.First onClick={ (ev) => handleClick( 1 ) } disabled={ currentPage === 1 } /> }
-      { showButton && <Pagination.Prev onClick={ (ev) => handleClick( currentPage - 1 ) } disabled={ currentPage-1 === 0 } />}
-      <Pagination.Item onClick={ (ev) => handleClick( 1 ) } active={ currentPage === 1 } >{1}</Pagination.Item>
+    <div className="paginator_container">
+      <Pagination>
+        { showButton && <Pagination.First onClick={ (ev) => handleClick( 1 ) } disabled={ currentPage === 1 } /> }
+        { showButton && <Pagination.Prev onClick={ (ev) => handleClick( currentPage - 1 ) } disabled={ currentPage-1 === 0 } />}
+        <Pagination.Item onClick={ (ev) => handleClick( 1 ) } active={ currentPage === 1 } >{1}</Pagination.Item>
 
-      <Component { ...props } deviceWidth={ deviceWidth } pages={ pages } />
+        <Component { ...props } deviceWidth={ deviceWidth } pages={ pages } />
 
-      <Pagination.Item onClick={ (ev) => handleClick( pages ) } active={ currentPage === pages }>{ pages }</Pagination.Item>
-      { showButton && <Pagination.Next onClick={ (ev) => handleClick( currentPage + 1 ) } disabled={ currentPage+1 > pages } />}
-      { showButton && <Pagination.Last onClick={ (ev) => handleClick( pages ) } disabled={ currentPage === pages } /> }
-    </Pagination>
+        <Pagination.Item onClick={ (ev) => handleClick( pages ) } active={ currentPage === pages }>{ pages }</Pagination.Item>
+        { showButton && <Pagination.Next onClick={ (ev) => handleClick( currentPage + 1 ) } disabled={ currentPage+1 > pages } />}
+        { showButton && <Pagination.Last onClick={ (ev) => handleClick( pages ) } disabled={ currentPage === pages } /> }
+      </Pagination>
+    </div>
   )
 }
 

@@ -25,6 +25,8 @@ code {
 
 .list-container {
   height: 22em;
+  width: 80%;
+  margin: auto;
 }
 
 .list {
@@ -32,15 +34,30 @@ code {
   margin-bottom: 1rem;
   box-sizing: border-box;
   overflow: hidden;
+  padding: 0 1em;
 }
 
 .list .card:hover {
-  background-color: #e9ecef;
+  background-color: rgb(46, 38, 94);
   text-decoration: none;
 }
 
 .list .card:hover a {
   color: #0056b3;
+}
+
+.page-item.active .page-link {
+  background: darkslateblue !important;
+  border-color: purple !important;
+  color: white !important;
+}
+
+.page-item.disabled .page-link {
+  color: lightgray !important;
+}
+
+.page-link {
+  color: darkslateblue !important;
 }
 
 .list .card-body {
@@ -55,6 +72,9 @@ code {
   transform: skew(20deg);
   width: 95%;
   margin: auto;
+  background: darkslateblue;
+  color: white;
+  box-shadow: 2px 2px 0 gray;
 }
 
 @-webkit-keyframes slide {
@@ -72,7 +92,6 @@ code {
 
 .pagination {
   padding: 0 !important;
-  margin: auto;
   width: fit-content;
 }
 
@@ -99,7 +118,40 @@ code {
   border-bottom-left-radius: 50% !important;
 }
 
+.page-item .page-link {
+  box-shadow: 2px 2px 0 gray;
+}
+
 .page-item:last-child .page-link {
   border-top-right-radius: 50% !important;
   border-bottom-right-radius: 50% !important;
+}
+
+.index_container {
+  margin: auto;
+  padding: 3em 0;
+  background-color: rgba(221, 221, 255, 0.65);
+  height: auto;
+}
+
+.index_container .text {
+  font-size: 1.5em;
+  margin: 0 auto 1em !important;
+  font-family: Verdana;
+  text-align: left !important;
+  text-transform: none !important;
+  width: 80%;
+}
+
+.index_container a {
+  text-align: center;
+}
+
+.index_container .shadow_container {
+  height: auto;
+}
+
+.paginator_container {
+  margin: 1em auto 0;
+  width: fit-content;
 }

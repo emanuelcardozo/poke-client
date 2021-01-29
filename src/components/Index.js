@@ -27,8 +27,9 @@ function Index({ location, history }) {
   }
 
   return(
-    <div className="col-md-8 margin_auto">
-      <div className="list-container">
+    <div className="col-md-8 index_container">
+      <div className="container shadow_container">
+        <label className="text">Please choose a pokemon:</label>
         <List pokemons={ state.pokemons } />
       </div>
       <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
