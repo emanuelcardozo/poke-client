@@ -4,6 +4,7 @@ import Header from "./Header"
 import Index from "./Index"
 import Show from "./Show"
 import Error from "./Error"
+import Footer from "./Footer"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <div className="container">
+        <div id="body" className="container">
           <div className="row">
               <Switch>
                 <Route path="/pokemon/:id" component={ Show } />
@@ -24,6 +25,7 @@ function App() {
               </Switch>
           </div>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );

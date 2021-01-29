@@ -1,6 +1,9 @@
+#body {
+  min-height: 63vh;
+}
+
 .App {
   text-align: center;
-  padding-bottom: 5em;
 }
 
 .App-logo {

@@ -1,0 +1,51 @@
+footer {
+  display: flex;
+  background: purple;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  min-height: 10em;
+  margin-top: 2em;
+  padding: 2em
+}
+
+footer .col-sm-4 {
+  margin-bottom: 1em
+}
+
+.follow_me_container img {
+  width: 2em;
+  margin: 0 .5em;
+  transition: .5s;
+}
+
+.follow_me_container .icons {
+  height: 2.5em;
+}
+
+.follow_me_container img:hover {
+  width: 2.3em;
+}
+
+.icons-provider {
+}
+
+.language_container .btn-secondary:first-child {
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+}
+
+.language_container .btn-secondary:last-child {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}
+
+.language_container .btn-secondary {
+  background-color: ghostwhite;
+  color: darkslateblue;
+}
+
+.language_container .btn-secondary.active {
+  background-color: darkslateblue !important;
+}

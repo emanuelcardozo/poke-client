@@ -16,6 +16,7 @@ html {
 
 #root {
   background: url("../images/background.png");
+  overflow-y: hidden;
 }
 
 code {
