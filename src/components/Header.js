@@ -6,11 +6,11 @@ import { withRouter } from 'react-router-dom'
 const NavBarWithRouter = withRouter(NavBar)
 
 
-function Header(props) {
+function Header({ translater }) {
   return(
     <header className="row header">
-      <Logo />
-      <NavBarWithRouter />
+      <Logo translater={ translater }/>
+      <NavBarWithRouter translater={ translater } />
     </header>
   )
 }

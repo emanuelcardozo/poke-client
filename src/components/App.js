@@ -10,19 +10,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import actions from "../redux/actions"
 import { getLanguage } from "../redux/selectors"
 import { connect } from "react-redux";
+import translater from "../settings/translater"
+
 
 function App({language}) {
-  console.log(language);
   return (
     <div className="App">
       <BrowserRouter>
-        <Header language={ language } />
+        <Header translater={ translater[language] } />
         <div id="body" className="container">
           <div className="row">
               <Switch>
-                <Route path="/pokemon/:id" render={ (props) =><Show { ...props }  language={language} /> } />
-                <Route path="/error" exact render={ (props) =><Error { ...props } language={language}  /> } />
-                <Route path="/pokemons" exact render={ (props) =><Index { ...props } language={language}  /> } />
+                <Route path="/pokemon/:id" render={ (props) =><Show { ...props }  translater={ translater[language] } /> } />
+                <Route path="/error" exact render={ (props) =><Error { ...props } translater={ translater[language] }  /> } />
+                <Route path="/pokemons" exact render={ (props) =><Index { ...props } translater={ translater[language] }  /> } />
                 <Route path="/about_us" exact render={ null } />
                 <Route path="/contact_us" exact render={ null } />
                 <Route path="/sign_in" exact render={ null } />
@@ -30,7 +31,7 @@ function App({language}) {
               </Switch>
           </div>
         </div>
-        <Footer language={ language } />
+        <Footer translater={ translater[language] } />
       </BrowserRouter>
     </div>
   );

@@ -1,6 +1,6 @@
 import "../assets/stylesheets/error.css"
 
-function Error() {
+function Error({ translater }) {
   return(
     <div className="col-md-8 margin_auto">
       <div className="container">
@@ -15,19 +15,13 @@ function Error() {
         </div>
         <div className="row">
           <div className="col">
-            <h5>The page you were looking for was moved or doesn't exist.</h5>
+            <h5>{ translater.no_page }</h5>
             <h1>...</h1>
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <h5>Let's get you back.</h5>
-            <h1>...</h1>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-6 margin_auto">
-            <a href="/">Go Home</a>
+            <a href="/">{ translater.get_back }</a>
           </div>
         </div>
       </div>

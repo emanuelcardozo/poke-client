@@ -1,10 +1,10 @@
 import Container from "../utils/Container"
 
-function Info({ pokemon }) {
+function Info({ pokemon, translater }) {
 
   const { characteristic } = pokemon
-  let highestStat = "Unknown"
-  let description = "Unknown"
+  let highestStat = translater.unknown
+  let description = translater.unknown
 
   if(characteristic){
     highestStat = characteristic.highest_stat.name
@@ -17,17 +17,17 @@ function Info({ pokemon }) {
       <div className="info_body">
         <div className="row">
           <div className="col-6">
-            <label>Height</label><p>{pokemon.height}</p>
-            <label>Base XP</label><p>{pokemon.base_experience}</p>
+            <label>{ translater.height }</label><p>{pokemon.height}</p>
+            <label>{ translater.base_experience }</label><p>{pokemon.base_experience}</p>
           </div>
           <div className="col-6">
-            <label>Weight</label><p>{pokemon.weight}</p>
-            <label>Highest Stat</label><p>{ highestStat }</p>
+            <label>{ translater.weight }</label><p>{pokemon.weight}</p>
+            <label>{ translater.highest_stat }</label><p>{ highestStat }</p>
           </div>
         </div>
         <div className="row info_description">
           <div className="col-12">
-            <label>Description</label><p>{ description }</p>
+            <label>{ translater.description }</label><p>{ description }</p>
           </div>
         </div>
       </div>

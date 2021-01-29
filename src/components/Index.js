@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import Paginator from "./utils/Paginator"
 import List from "./index/List"
 
-function Index({ location, history }) {
+function Index({ location, history, translater }) {
   const { search } = location;
   const pageString = search.split("page=")[1];
   const page = parseInt(pageString || 1);
@@ -29,8 +29,8 @@ function Index({ location, history }) {
   return(
     <div className="col-md-8 index_container">
       <div className="container shadow_container">
-        <label className="text">Please choose a pokemon:</label>
-        <List pokemons={ state.pokemons } />
+        <label className="text">{ translater.choose_pokemon }</label>
+        <List pokemons={ state.pokemons } translater={ translater } />
       </div>
       <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
     </div>

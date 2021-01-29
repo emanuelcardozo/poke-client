@@ -1,13 +1,14 @@
 import actions from "../../redux/actions"
+import { getLanguage } from "../../redux/selectors"
 import { connect } from "react-redux";
+import translater from "../../settings/translater"
 
-const languages = [ "SPA", "ENG" ]
+const languages = [ "ESP", "ENG" ]
 
-function Language({ language, setLanguage }) {
-
+function Language({ translater, language, setLanguage }) {
   return(
     <div className="col-sm-4 language_container">
-      <label>Choose your language:</label><br/>
+      <label>{ translater.choose_your_language }</label><br/>
       <div className="btn-group btn-group-toggle" data-toggle="buttons">
         {
           languages.map((lan, i)=>{
@@ -28,6 +29,6 @@ function Language({ language, setLanguage }) {
 }
 
 export default connect(
-  null,
+  getLanguage,
   { setLanguage: actions.setLanguage }
 )(Language);

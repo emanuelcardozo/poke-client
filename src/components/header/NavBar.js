@@ -1,14 +1,14 @@
 import { Navbar, Nav } from 'react-bootstrap'
 
-const links = [
-  { label: "Home", to: "/" },
-  { label: "All Pokemons", to: "/pokemons" },
-  { label: "About us", to: "/about_us" },
-  { label: "Contact us", to: "/contact_us" },
-  { label: "Sign in", to: "/sign_in", class: "nav-link-end" },
-]
+function NavBar({ translater, location }) {
 
-function NavBar({ location }) {
+  const links = [
+    { label: translater.home, to: "/" },
+    { label: translater.all_pokemons, to: "/pokemons" },
+    { label: translater.about_us, to: "/about_us" },
+    { label: translater.contact_us, to: "/contact_us" },
+    { label: translater.sign_in, to: "/sign_in", class: "nav-link-end" },
+  ]
 
   return(
     <div className="col-sm-8">

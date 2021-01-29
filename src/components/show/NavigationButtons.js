@@ -13,7 +13,7 @@ function NavigationButtons({ id, history, children, onClick }) {
         <button
           className="btn poke-button prev"
           onClick={ (ev) => goTo(id-1) }>
-            <img src={ back } />
+            <img src={ back } alt="back" />
         </button>
       </div>
       <div className="col-8">
@@ -23,7 +23,7 @@ function NavigationButtons({ id, history, children, onClick }) {
         <button
           className="btn poke-button next"
           onClick={ (ev) => goTo(id+1) }>
-          <img src={ back } />
+          <img src={ back } alt="next" />
         </button>
       </div>
     </div>

@@ -12,7 +12,7 @@ import Container from "./utils/Container"
 import "../assets/stylesheets/show.css"
 
 
-function Show({ match, history }) {
+function Show({ match, history, translater }) {
   const id = parseInt( match.params.id )
   const [ pokemon, setPokemon ] = useState({});
   const setLoading = () => {
@@ -28,7 +28,7 @@ function Show({ match, history }) {
       })
   }, [id])
 
-  if(utils.isEmpty(pokemon)) return <Loading />
+  if(utils.isEmpty(pokemon)) return <Loading translater={ translater } />
 
   return(
     <div className="col-md-8 main_content">
@@ -40,11 +40,11 @@ function Show({ match, history }) {
           <Images sprites={ pokemon.sprites } />
           <Types types={ pokemon.types } />
         </Container>
-        <Stats stats={ pokemon.stats } />
+        <Stats stats={ pokemon.stats } translater={ translater }/>
       </div>
       <div className="row">
-        <Info pokemon={ pokemon } />
-        <Moves moves={ pokemon.moves } />
+        <Info pokemon={ pokemon } translater={ translater }/>
+        <Moves moves={ pokemon.moves } translater={ translater } />
       </div>
     </div>
   )

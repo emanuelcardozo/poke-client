@@ -2,13 +2,13 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Loading from "../utils/Loading"
 
-function List({ pokemons }) {
+function List({ pokemons, translater }) {
 
   if(!pokemons.length)
     return (
       <div className="list-container">
         <div className="list">
-          <Loading />
+          <Loading translater={ translater } />
         </div>
       </div>
     )

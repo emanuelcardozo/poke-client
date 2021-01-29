@@ -1,7 +1,7 @@
 import { SET_LANGUAGE } from "../actions/types";
 
 const initialState = {
-  language: "ENG"
+  language: localStorage.language || "ENG"
 };
 
 const language = (state = initialState, action) => {
