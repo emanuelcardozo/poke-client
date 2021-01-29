@@ -2,14 +2,14 @@ import Language from './footer/Language'
 import FollowMe from './footer/FollowMe'
 import "../assets/stylesheets/footer.css"
 
-function Footer() {
+function Footer(props) {
   return(
     <footer>
       <div className="row">
         <div className="col-sm-4">
         </div>
-        <Language />
-        <FollowMe />
+        <Language {...props}/>
+        <FollowMe {...props}/>
       </div>
       <div className="icons-provider">
         Icons designed

@@ -7,10 +7,10 @@ function FollowMe() {
       <label>Follow me:</label><br/>
       <div className="icons">
         <a href="https://www.linkedin.com/in/emanuel-cardozo-359296114/">
-          <img src={ linkedin } />
+          <img src={ linkedin } alt="linkedin" />
         </a>
         <a href="https://github.com/emanuelcardozo">
-          <img src={ github } />
+          <img src={ github } alt="github" />
         </a>
       </div>
     </div>
