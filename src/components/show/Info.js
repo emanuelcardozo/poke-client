@@ -1,6 +1,8 @@
 import Container from "../utils/Container"
+import { getLanguage } from "../../redux/selectors"
+import { connect } from "react-redux";
 
-function Info({ pokemon, translater }) {
+function Info({ pokemon, translater, language }) {
 
   const { characteristic } = pokemon
   let highestStat = translater.unknown
@@ -8,7 +10,8 @@ function Info({ pokemon, translater }) {
 
   if(characteristic){
     highestStat = characteristic.highest_stat.name
-    description = characteristic.descriptions[2].description
+    let index = language === "ESP" ? 1 : 2
+    description = characteristic.descriptions[index].description
   }
 
   return(
@@ -35,4 +38,4 @@ function Info({ pokemon, translater }) {
   )
 }
 
-export default Info;
+export default connect(getLanguage)(Info);
