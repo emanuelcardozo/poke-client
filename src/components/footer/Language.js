@@ -1,7 +1,6 @@
 import actions from "../../redux/actions"
 import { getLanguage } from "../../redux/selectors"
 import { connect } from "react-redux";
-import translater from "../../settings/translater"
 
 const languages = [ "ESP", "ENG" ]
 

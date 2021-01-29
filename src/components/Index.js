@@ -13,13 +13,13 @@ function Index({ location, history, translater }) {
     API.getPokemons(page)
       .then( response => {
         if( response.results.length === 0 )
-          throw { type: "error", description: "Wrong Page"}
+          throw new Error("Wrong Page");
 
         setState({ pokemons: response.results, count: response.count })
       }).catch( e => {
         history.push("/?page=1")
       })
-  }, [page])
+  }, [page, history])
 
   const handleClick = (page)=>{
     setState({ ...state, pokemons: [] })

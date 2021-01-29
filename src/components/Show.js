@@ -26,7 +26,7 @@ function Show({ match, history, translater }) {
       }).catch( e => {
         history.push("/error")
       })
-  }, [id])
+  }, [id, history])
 
   if(utils.isEmpty(pokemon)) return <Loading translater={ translater } />
 
