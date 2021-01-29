@@ -2,7 +2,7 @@ import "../assets/stylesheets/error.css"
 
 function Error({ translater }) {
   return(
-    <div className="col-md-8 margin_auto">
+    <div className="col-md-8 error_container shadow_container">
       <div className="container">
         <div className="row">
           <div className="display-flex">
@@ -21,7 +21,7 @@ function Error({ translater }) {
         </div>
         <div className="row">
           <div className="col">
-            <a href="/">{ translater.get_back }</a>
+            <a href="/pokemons">{ translater.get_back }</a>
           </div>
         </div>
       </div>

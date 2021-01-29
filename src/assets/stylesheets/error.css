@@ -70,3 +70,12 @@
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
 }
+
+.error_container {
+  margin: auto;
+  text-align: center;
+}
+
+.error_container a {
+  color: darkslateblue !important
+}

@@ -22,12 +22,9 @@ function App({language}) {
           <div className="row">
               <Switch>
                 <Route path="/pokemon/:id" render={ (props) =><Show { ...props }  translater={ translater[language] } /> } />
-                <Route path="/error" exact render={ (props) =><Error { ...props } translater={ translater[language] }  /> } />
                 <Route path="/pokemons" exact render={ (props) =><Index { ...props } translater={ translater[language] }  /> } />
-                <Route path="/about_us" exact render={ null } />
-                <Route path="/contact_us" exact render={ null } />
-                <Route path="/sign_in" exact render={ null } />
-                <Route path="/" exact render={ null } />
+                <Route path="/error" render={ (props) =><Error { ...props } translater={ translater[language] }  /> } />
+                <Route path="/" render={ (props) =><Error { ...props } translater={ translater[language] }  /> } />
               </Switch>
           </div>
         </div>
