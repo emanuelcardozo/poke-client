@@ -49,3 +49,15 @@ footer .col-sm-4 {
 .language_container .btn-secondary.active {
   background-color: darkslateblue !important;
 }
+
+.links_container {
+  display: grid;
+}
+
+.links_container a {
+  color: white !important;
+}
+
+.links_container a:hover {
+  color: gray !important;
+}

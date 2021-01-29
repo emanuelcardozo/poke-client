@@ -1,14 +1,17 @@
 import Language from './footer/Language'
 import FollowMe from './footer/FollowMe'
+import FooterLinks from './footer/FooterLinks'
 import "../assets/stylesheets/footer.css"
+import { withRouter } from 'react-router-dom'
+
+const FooterLinksWithRouter = withRouter(FooterLinks)
 
 
 function Footer({ translater }) {
   return(
     <footer>
       <div className="row">
-        <div className="col-sm-4">
-        </div>
+        <FooterLinksWithRouter translater={ translater } />
         <Language translater={ translater } />
         <FollowMe translater={ translater } />
       </div>
