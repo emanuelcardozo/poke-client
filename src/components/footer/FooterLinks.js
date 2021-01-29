@@ -6,7 +6,6 @@ function FooterLinks({ translater }) {
     { label: translater.all_pokemons, to: "/pokemons" },
     { label: translater.about_us, to: "/about_us" },
     { label: translater.contact_us, to: "/contact_us" },
-    { label: translater.sign_in, to: "/sign_in", class: "nav-link-end" },
   ]
 
   return(
