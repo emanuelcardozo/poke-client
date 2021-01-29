@@ -7,10 +7,10 @@ function FollowMe({ translater }) {
     <div className="col-sm-4 follow_me_container">
       <label>{ `${ translater.follow_me }:` }</label><br/>
       <div className="icons">
-        <a href="https://www.linkedin.com/in/emanuel-cardozo-359296114/">
+        <a href="https://www.linkedin.com/in/emanuel-cardozo-359296114/" target="_blank">
           <img src={ linkedin } alt="linkedin" />
         </a>
-        <a href="https://github.com/emanuelcardozo">
+        <a href="https://github.com/emanuelcardozo" target="_blank">
           <img src={ github } alt="github" />
         </a>
       </div>
