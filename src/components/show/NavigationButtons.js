@@ -1,9 +1,8 @@
 import back from "../../assets/svgs/back.svg"
 
-function NavigationButtons({ id, history, children, onClick }) {
+function NavigationButtons({ id, history, children }) {
 
   function goTo(newId){
-    onClick()
     history.push(`/pokemon/${newId}`)
   }
 

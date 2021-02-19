@@ -11,28 +11,33 @@ import Loading from "./utils/Loading"
 import Container from "./utils/Container"
 import "../assets/stylesheets/show.css"
 
-
-function Show({ match, history, translater }) {
-  const id = parseInt( match.params.id )
+function usePokemon(id){
   const [ pokemon, setPokemon ] = useState({});
-  const setLoading = () => {
-    setPokemon({})
-  }
 
   useEffect(() => {
     API.getPokemon(id)
       .then( response => {
           setPokemon(response)
       }).catch( e => {
-        history.push("/error")
+        console.log(e);
       })
-  }, [id, history])
+
+    return () => setPokemon({})
+  }, [id])
+
+  return pokemon
+}
+
+
+function Show({ match, history, translater }) {
+  const id = parseInt( match.params.id )
+  const pokemon = usePokemon(id)
 
   if(utils.isEmpty(pokemon)) return <Loading translater={ translater } />
 
   return(
     <div className="col-md-8 main_content">
-      <NavigationButtons id={ id } history={ history } onClick={ setLoading } >
+      <NavigationButtons id={ id } history={ history } >
         <h3 className="poke-name" >{ pokemon.name }</h3>
       </ NavigationButtons>
       <div className="row">
