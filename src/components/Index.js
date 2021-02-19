@@ -2,12 +2,12 @@ import API from "../api/index.js"
 import React, { useState, useEffect } from "react"
 import Paginator from "./utils/Paginator"
 import List from "./index/List"
+import Utils from "../lib/utils"
 
-function Index({ location, history, translater }) {
-  const { search } = location;
-  const pageString = search.split("page=")[1];
-  const page = parseInt(pageString || 1);
-  const [ state, setState ] = useState({ pokemons: [], count: 0 });
+let pokemonsCount = 0
+
+function usePokemons(page){
+  const [ pokemons, setPokemons ] = useState([])
 
   useEffect(() => {
     API.getPokemons(page)
@@ -15,24 +15,31 @@ function Index({ location, history, translater }) {
         if( response.results.length === 0 )
           throw new Error("Wrong Page");
 
-        setState({ pokemons: response.results, count: response.count })
-      }).catch( e => {
-        history.push("/?page=1")
-      })
-  }, [page, history])
+        setPokemons( response.results )
+        pokemonsCount = response.count
 
-  const handleClick = (page)=>{
-    setState({ ...state, pokemons: [] })
-    history.push("?page=" + page)
-  }
+      }).catch( e => {
+        console.log(e);
+      })
+
+    return () => setPokemons([])
+  }, [page])
+
+  return pokemons
+}
+
+function Index({ location, history, translater }) {
+  const page = Utils.getPage(history)
+  
+  const pokemons = usePokemons(page);
 
   return(
     <div className="col-md-8 index_container">
       <div className="container shadow_container">
         <label className="text">{ translater.choose_pokemon }</label>
-        <List pokemons={ state.pokemons } translater={ translater } />
+        <List pokemons={ pokemons } translater={ translater } />
       </div>
-      <Paginator handleClick={ handleClick } items={ state.count } currentPage={ page } itemsPerPage={ 5 } />
+      <Paginator history={ history } items={ pokemonsCount } currentPage={ page } itemsPerPage={ 5 } />
     </div>
   )
 }

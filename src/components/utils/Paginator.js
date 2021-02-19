@@ -5,7 +5,7 @@ import { Pagination } from "react-bootstrap"
 
 
 function Paginator(props){
-  const { items, currentPage, itemsPerPage, handleClick } = props;
+  const { items, currentPage, itemsPerPage, history } = props;
   const pages = Math.round( items / itemsPerPage );
   let Component;
   const deviceWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
@@ -20,6 +20,10 @@ function Paginator(props){
     else
       Component = PaginationWithMiddlePages
 
+  function handleClick(page){
+    history.push(`?page=${page}`)
+  }
+
   return(
     <div className="paginator_container">
       <Pagination>
@@ -27,7 +31,7 @@ function Paginator(props){
         { showButton && <Pagination.Prev onClick={ (ev) => handleClick( currentPage - 1 ) } disabled={ currentPage-1 === 0 } />}
         <Pagination.Item onClick={ (ev) => handleClick( 1 ) } active={ currentPage === 1 } >{1}</Pagination.Item>
 
-        <Component { ...props } deviceWidth={ deviceWidth } pages={ pages } />
+        <Component { ...props } deviceWidth={ deviceWidth } pages={ pages } handleClick={ handleClick } />
 
         <Pagination.Item onClick={ (ev) => handleClick( pages ) } active={ currentPage === pages }>{ pages }</Pagination.Item>
         { showButton && <Pagination.Next onClick={ (ev) => handleClick( currentPage + 1 ) } disabled={ currentPage+1 > pages } />}

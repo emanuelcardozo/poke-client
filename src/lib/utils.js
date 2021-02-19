@@ -37,6 +37,12 @@ const utils = {
     }
 
     return values;
+  },
+
+  getPage: (history) =>{
+    const pageString = history.location.search.split("page=")[1];
+    
+    return parseInt(pageString || 1);
   }
 }
 
