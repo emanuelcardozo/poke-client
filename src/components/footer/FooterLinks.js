@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom"
+import { useContext } from 'react'
+import { TranslaterContext } from '../context/Translater';
 
-function FooterLinks({ translater }) {
+function FooterLinks() {
+  const translater = useContext(TranslaterContext)[0]
+
   const links = [
     { label: translater.home, to: "/" },
     { label: translater.all_pokemons, to: "/pokemons" },

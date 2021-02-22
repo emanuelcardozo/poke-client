@@ -1,4 +1,9 @@
-function MovesTable({ moves, translater }) {
+import { useContext } from 'react'
+import { TranslaterContext } from '../context/Translater';
+
+function MovesTable({ moves }) {
+  const translater = useContext(TranslaterContext)[0]
+
   return(
     <table className="table table-hover moves_table">
       <thead>

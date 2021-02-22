@@ -1,5 +1,6 @@
 const translater = {
   ESP: {
+    language: "español",
     choose_your_language: "Elige tu idioma:",
     follow_me: "Sígueme",
     icons_designed_by: "Íconos diseñados por",
@@ -31,6 +32,7 @@ const translater = {
     get_back: "Vamos a regresar"
   },
   ENG: {
+    language: "english",
     choose_your_language: "Choose your language:",
     follow_me: "Follow me",
     icons_designed_by: "Icons designed by",

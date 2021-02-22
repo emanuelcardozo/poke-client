@@ -5,6 +5,8 @@ import biceps from "../../assets/svgs/biceps.svg"
 import shield from "../../assets/svgs/shield.svg"
 import sword from "../../assets/svgs/sword.svg"
 import speed from "../../assets/svgs/speed.svg"
+import { useContext } from 'react'
+import { TranslaterContext } from '../context/Translater';
 
 const icons = {
   hp: heart,
@@ -15,7 +17,8 @@ const icons = {
   speed
 }
 
-function Stats({ stats, translater }) {
+function Stats({ stats }) {
+  const translater = useContext(TranslaterContext)[0]
 
   return(
     <div className="stats col-md-6">

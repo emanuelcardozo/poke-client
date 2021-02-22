@@ -1,6 +1,10 @@
 import "../../assets/stylesheets/Loading.css"
+import { useContext } from 'react'
+import { TranslaterContext } from '../context/Translater';
 
-function Loading({ translater }){
+function Loading(){
+  const translater = useContext(TranslaterContext)[0]
+
   return (
     <div className="center-on-page">
       <div className="pokeball">

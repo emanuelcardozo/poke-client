@@ -1,6 +1,10 @@
 import "../assets/stylesheets/error.css"
+import { useContext } from 'react'
+import { TranslaterContext } from './context/Translater';
 
-function Error({ translater }) {
+function Error() {
+  const translater = useContext(TranslaterContext)[0]
+
   return(
     <div className="col-md-8 error_container shadow_container">
       <div className="container">

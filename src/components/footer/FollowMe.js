@@ -1,7 +1,11 @@
 import linkedin from "../../assets/svgs/linkedin.svg"
 import github from "../../assets/svgs/github.svg"
+import { useContext } from 'react'
+import { TranslaterContext } from '../context/Translater';
 
-function FollowMe({ translater }) {
+function FollowMe() {
+  const translater = useContext(TranslaterContext)[0]
+
   return(
     <div className="col-sm-4 follow_me_container">
       <label>{ `${ translater.follow_me }:` }</label><br/>

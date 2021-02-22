@@ -1,9 +1,12 @@
 import Container from "../utils/Container"
 import { getLanguage } from "../../redux/selectors"
 import { connect } from "react-redux";
+import { TranslaterContext } from '../context/Translater';
+import { useContext } from 'react'
 
-function Info({ pokemon, translater, language }) {
+function Info({ pokemon, language }) {
 
+  const translater = useContext(TranslaterContext)[0]
   const { characteristic } = pokemon
   let highestStat = translater.unknown
   let description = translater.unknown

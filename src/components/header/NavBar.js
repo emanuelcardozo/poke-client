@@ -1,6 +1,10 @@
 import { Navbar, Nav } from 'react-bootstrap'
+import { useContext } from 'react'
+import { TranslaterContext } from '../context/Translater';
 
-function NavBar({ translater, location }) {
+function NavBar({ location }) {
+
+  const translater = useContext(TranslaterContext)[0]
 
   const links = [
     { label: translater.home, to: "/" },

@@ -29,11 +29,11 @@ function usePokemon(id){
 }
 
 
-function Show({ match, history, translater }) {
+function Show({ match, history }) {
   const id = parseInt( match.params.id )
   const pokemon = usePokemon(id)
 
-  if(utils.isEmpty(pokemon)) return <Loading translater={ translater } />
+  if(utils.isEmpty(pokemon)) return <Loading  />
 
   return(
     <div className="col-md-8 main_content">
@@ -45,11 +45,11 @@ function Show({ match, history, translater }) {
           <Images sprites={ pokemon.sprites } />
           <Types types={ pokemon.types } />
         </Container>
-        <Stats stats={ pokemon.stats } translater={ translater }/>
+        <Stats stats={ pokemon.stats } />
       </div>
       <div className="row">
-        <Info pokemon={ pokemon } translater={ translater }/>
-        <Moves moves={ pokemon.moves } translater={ translater } />
+        <Info pokemon={ pokemon } />
+        <Moves moves={ pokemon.moves } />
       </div>
     </div>
   )

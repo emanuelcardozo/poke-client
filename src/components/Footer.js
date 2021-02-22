@@ -3,17 +3,20 @@ import FollowMe from './footer/FollowMe'
 import FooterLinks from './footer/FooterLinks'
 import "../assets/stylesheets/footer.css"
 import { withRouter } from 'react-router-dom'
+import { useContext } from 'react'
+import { TranslaterContext } from './context/Translater';
 
 const FooterLinksWithRouter = withRouter(FooterLinks)
 
+function Footer() {
+  const translater = useContext(TranslaterContext)[0]
 
-function Footer({ translater }) {
   return(
     <footer>
       <div className="row">
-        <FooterLinksWithRouter translater={ translater } />
-        <Language translater={ translater } />
-        <FollowMe translater={ translater } />
+        <FooterLinksWithRouter />
+        <Language />
+        <FollowMe />
       </div>
       <div className="icons-provider">
         { translater.icons_designed_by + " " }

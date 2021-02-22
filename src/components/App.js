@@ -10,26 +10,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import actions from "../redux/actions"
 import { getLanguage } from "../redux/selectors"
 import { connect } from "react-redux";
-import translater from "../settings/translater"
-
+import TranslaterProvider from './context/Translater'
 
 function App({language}) {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header translater={ translater[language] } />
-        <div id="body" className="container">
-          <div className="row">
-              <Switch>
-                <Route path="/pokemon/:id" render={ (props) =><Show { ...props }  translater={ translater[language] } /> } />
-                <Route path="/pokemons" exact render={ (props) =><Index { ...props } translater={ translater[language] }  /> } />
-                <Route path="/error" render={ (props) =><Error { ...props } translater={ translater[language] }  /> } />
-                <Route path="/" render={ (props) =><Error { ...props } translater={ translater[language] }  /> } />
-              </Switch>
+      <TranslaterProvider>
+        <BrowserRouter>
+          <Header />
+          <div id="body" className="container">
+            <div className="row">
+                <Switch>
+                  <Route path="/pokemon/:id" component={ Show } />
+                  <Route path="/pokemons" exact component={ Index } />
+                  <Route path="/error" component={ Error } />
+                  <Route path="/" component={ Error } />
+                </Switch>
+            </div>
           </div>
-        </div>
-        <Footer translater={ translater[language] } />
-      </BrowserRouter>
+          <Footer />
+        </BrowserRouter>
+      </TranslaterProvider>
     </div>
   );
 }

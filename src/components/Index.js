@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react"
 import Paginator from "./utils/Paginator"
 import List from "./index/List"
 import Utils from "../lib/utils"
+import { useContext } from 'react'
+import { TranslaterContext } from './context/Translater';
 
 let pokemonsCount = 0
 
@@ -28,16 +30,17 @@ function usePokemons(page){
   return pokemons
 }
 
-function Index({ location, history, translater }) {
-  const page = Utils.getPage(history)
-  
+function Index({ location, history }) {
+  const page = Utils.getPage(history)  
   const pokemons = usePokemons(page);
+  const translater = useContext(TranslaterContext)[0]
+
 
   return(
     <div className="col-md-8 index_container">
       <div className="container shadow_container">
         <label className="text">{ translater.choose_pokemon }</label>
-        <List pokemons={ pokemons } translater={ translater } />
+        <List pokemons={ pokemons } />
       </div>
       <Paginator history={ history } items={ pokemonsCount } currentPage={ page } itemsPerPage={ 5 } />
     </div>
